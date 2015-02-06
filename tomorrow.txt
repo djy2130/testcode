@@ -1,0 +1,50 @@
+public static String UserRegisteration = "urg";public static String EchoRegisteration = "eur";
+UUID
+Usable
+
+http://192.168.55.14:8088/redmine/
+
+https://svn.sinaapp.com/accelcraft/
+https://svn.sinaapp.com/sanbox/
+https://svn.sinaapp.com/aibamei/
+https://svn.sinaapp.com/ifinger/
+qiuhuahui1@qq.com
+qiuhuahui1@126.com
+qhh1989
+    	
+//访问
+accelcraft.sinaapp.com
+sanbox.sinaapp.com
+aibamei.sinaapp.com
+ifinger.sinaapp.com
+
+放置类游戏 http://s2.idle2.marrla.com:8080/
+
+基于mac系统的apache服务器的使用流程 
+http://blog.sina.com.cn/s/blog_5ffa81380101fo7b.html
+开启服务器
+sudo apachectl start
+关闭apache命令：sudo apachectl stop
+重启apache命令：sudo apachectl restart
+
+16:9 405:720 
+通常分辨率 405：692 上边有黑边
+4:3分辨率 405：540 最矮屏幕
+
+百度平台
+duapp.com
+
+提交svn
+https://svn.duapp.com/appidm8528jfcfy
+qiuhuahui1@126.com 
+qhh1989
+
+mac的jdk   先用文件夹前往
+/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+它指向这个地址
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+
+保存bash_profile文件
+source /Users/ZY/.bash_profile
+
+https://tinypng.com/

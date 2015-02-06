@@ -1,0 +1,60 @@
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+new SockJS("ws"+(c?"s":"")+"://"+a+":"+b+"/websocket")
+
+WebSocket   SockJS
++"/websocket"
+//var WebSocket = WebSocket || window.WebSocket || window.MozWebSocket;
+"ws"+(c?"s":"")+"://"+a+":"+b+"/websocket"
+接口名称	接口	参数	请求说明	响应	响应说明匹配玩家	mtp	FieldId,ModeId	fieldId选场，modeId选模式	门票不足时推送mne	
+准备好了  grk
+接收牌组	gcr				叫地主	cll	Pass			申请加倍	rfc	Pass			申请明牌	opc		act决定是否明牌		出牌	scr	Cards,Type			
+再发牌   rin
+中断之后拿房间变量	rar
+stm 补贴信息接口
+klr 我离开房间发的
+rar //现场恢复
+rsu //现场恢复ok
+//作弊码
+cut  Money = 
+vad
+
+//流程 我
+mtp->     Phase==“chihua”
+grk->     Phase=="fapai"
+//准备
+
+名称	含义Phase	阶段JDDTurn	叫地主回合数CPTurn	出牌回合数
+CPPass	出牌时上一家是否passPass	是否放弃行动TurnCount 回合数BottomCards	底牌Landlord	地主座位号LandlordOpenCard	地主是否明牌PresentCards	当前场上的牌PresentType	当前场上的牌型
+PresentWho	当前场上的牌谁出的0Cards,1Cards,2Cards	座位上人的牌0Ready,1Ready,2Ready	座位上人的准备0Id,1Id,2Id	座位上人的Id0Add,1Add,2Add	我可不可以加倍
+0DoAdd,1DoAdd,2DoAdd//我是不是加倍了
+0Factor
+FieldId	场IdModeId	模式Id
+
+
+fjf//房间进不了的情况
+
+
+//作弊码
+cht 
+Money
+
+Added some new browser types to cc.sys.
+Added some audio resource loading codes to ensure compatibility with Wechat browser.
+Added check for WebAudio support to ensure compatibility.
+
+
+Fixed an issue that cc.InputManager doesn't trigger touch event on chrome mobile emulator.
+Fixed an issue that cc.game.setFrameRate doesn't work.
+Fixed an issue that cc.view can't remove resize event listener.
+Fixed an issue that cc.EventManager didn't set register flag to false when a listener is removed.
+Fixed an issue that cc.audioEngine doesn't play some audios on some iOS devices.
+Fixed an issue of ccui controls that their setColor doesn't work when cascade color is enabled.
+Fixed an issue that ccs.Armature's setColor doesn't work in canvas render mode.
+Fixed an issue that ccs.Armature crashes when adding a child to it.
+Fixed an issue that cc.SpriteBatchNode's status is incorrect in WebGL render mode.
+Fixed an issue of cc.Layer that its position is incorrect under bake mode.
+Fixed an issue of ccui.RichText that its setContentSize doesn't work.
+Fixed an issue of cc.LabelTTF that its setColor doesn't work when cascade color is enabled.
+Fixed an issue of spine that its skeletons position is incorrect when scaleX equals to -1 and scaleY equals to 1.
+Fixed sp.Skeleton's API inconsistence by renaming boundingBox to getBoundingBox.
+Removed all usages of deprecated create functions in the test cases.

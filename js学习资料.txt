@@ -1,0 +1,297 @@
+http://docs2x.smartfoxserver.com/api-docs/jsdoc/symbols/SFS2X.Entities.SFSRoom.html
+流量统计
+http://tongji.cnzz.com/main.php?c=site&a=show
+djy2130@163.com
+5325585
+广告的
+http://www.adwo.com/eco.zhiyong@gmail.comadwoyeguoyouxi
+//百度链接 115.29.136.220
+http://longcunzhen.duapp.com/doudizhu
+
+打包的
+cd /Users/ZY/Documents/cocos/CocosJSGameNew 
+cd /Users/ZY/Documents/cocos/Moonwarriors
+
+cd /Users/ZY/Documents/cocos/DouDiZhu
+
+cocos compile -p web -m release
+
+cocos compile -p web -m release --advance
+
+cd /Users/ZY/Documents/cocos/JavaDouDi 
+
+cocos compile -p android -m release
+cocos compile -p ios -m release
+
+FTP服务器：ftp://192.185.174.48       账户（括号内红色部分）：【cocoswor】密码（括号内红色部分）：【P#xdarKu#X7X】
+
+cocos compile -p android -m release --ndk-mode release
+
+source /Users/ZY/.bash_profile
+
+
+
+//405 720-540之间
+
+
+
+你也可以给自己的对象属性定义getter/setter函数，只需要使用下面这行代码：
+1
+cc.defineGetterSetter(object, "propertyName", getterFunc, setterFunc);
+这样的话，var a = object.propertyName;会通过getterFunc获取propertyName的当前值，object.propertyName = newvalue;则会通过setterFunc来给propertyName赋新值。
+
+新API使得Cocos2d-html5代码更加简洁，但这还不够，我们为cc.Node添加了更为简单易用的attr函数。与jQuery的attr函数相同，这个函数允许开发者批量设置多个属性。示例如下：
+node.attr({
+    x: 20,
+    y: 20,
+    anchorX: 0.5,
+    anchorY: 0.5,
+    width: 400,
+    height: 300,
+    scale: 2
+});
+属性列表
+cc.node
+scaleX
+scaleY
+anchorX
+anchorY
+opacity
+rotation
+rotationX
+rotationY
+vertexZ
+zIndex —zorder
+skewX
+skewY
+color
+children
+childrenCount
+parent
+visible
+running
+ignoreAnchor
+tag
+userData
+userObject
+arrivalOrder
+actionManager
+scheduler
+grid
+shaderProgram
+
+cc.sprite
+flippedX
+flippedY
+offsetX
+offsetY
+atlasIndex
+texture
+textureRectRotated
+textureAtlas
+batchNode
+quad
+
+cc.labelTTF
+string
+textAlign
+fontSize
+fontName
+font
+lineWidth
+shadowOffsetX
+shadowOffsetY
+shadowOpacity
+shadowBlur
+
+
+值得一提的是，这个函数不仅仅支持文末列表中的属性，也支持开发者的自定义属性。
+
+evetn_hide 和 event_show函数
+cc.eventManager.addCustomListener(cc.game.EVENT_HIDE, function(){
+    //处理游戏进入后台的情况
+});
+cc.eventManager.addCustomListener(cc.game.EVENT_SHOW, function(){
+    //处理返回游戏的情况
+});
+
+新的action事件列表
+cc.Repeat.create(action, num)	action.repeat(num)
+cc.RepeatForever.create(action)	action.repeatForever()
+cc.Speed.create(action, speed)	action.speed(speed)
+cc.Speed.setSpeed(speed)	action.setSpeed(speed)
+cc.Speed.getSpeed()	action.getSpeed()
+cc.EaseIn.create(action, rate)	action.easing(cc.easeIn(rate))
+
+//选择房间的文字
+var selectRoomInforString = ["1千~3万元宝 10分","8千以上 50分","5万以上 300分","8万以上 600分"];
+
+例子
+EaseIn:
+var move = cc.MoveBy.create(2, cc.p(winSize.width - 80, 0)).easing(cc.easeIn(2.0));
+sprite.runAction(move);
+ 
+RepeatForever:
+var move = cc.MoveBy.create(2, cc.p(winSize.width - 80, 0)).RepeatForever();
+sprite.runAction(move);
+
+注意下面的特殊情况
+重复对一个action对象使用两次repeat/speed方法，执行结果为设置值相乘
+var action = cc.RotateTo.create(0.5, 90);
+//speed为6
+action.speed(2).speed(3);
+action.getSpeed() ==> 6;
+//repeat次数为6
+action.repeat(2).repeat(3);
+
+cc.pool的使用场景
+经常创建和销毁的元素，例如打飞机游戏里面的子弹等。
+不适用的场景：不是很经常创建的物体，比如背景，建筑等。
+
+1.
+cc.loader.loadJs("src", [
+    "a.js", "b.js"
+], function(err){
+    if(err) return console.log("load failed");
+    //success
+});
+2.
+cc.loader.loadJs([
+    "src/a.js", "src/b.js"
+], function(err){
+    if(err) return console.log("load failed");
+    //success
+});
+3.
+cc.loader.loadJs("src/a.js", function(err){
+    if(err) return console.log("load failed");
+    //success
+});
+4.
+cc.loader.loadTxt("res/a.txt", function(err, data){
+    if(err) return console.log("load failed");
+    //success
+});
+555.
+var res = ["res/a.png", "res/a.plist", "audio/b.mp3"];
+var testTarget = {
+    name : "the name is testTarget",
+    trigger : function(){...},
+    cb : function(err){...}
+};
+var option = {
+    trigger : testTarget.trigger,
+    triggerTarget : testTarget,
+    cbTarget : testTarget
+}
+//用法1：
+cc.loader.load(res, option, function(err){
+    if(err) return console.log("load failed");
+    console.log(this.name);//the name is testTarget
+});
+ 
+//用法2：
+cc.loader.load(res, function(err){
+    if(err) return console.log("load failed");
+});
+ 
+//用法3：
+option.cb = testTarget.cb;
+cc.loader.load(res, option);
+ 
+//用法4：
+cc.loader.load(res);
+
+—————
+精灵Sprite 一共4种创建方式
+(1)参数1：图片资源路径，参数2：显示区域
+var sprite2 = cc.Sprite.create("res/HelloHTML5World.png",cc.rect(0,0,480,320))
+(2)根据plist文件中的frame name创建. 注意:必须要在前头加#符号作为区分
+//参数1：帧名字 frame name
+var sprite = cc.Sprite.create('#grossini_dance_01.png');
+(3) 根据sprite frame创建
+var spriteFrame = cc.spriteFrameCache.getSpriteFrame("grossini_dance_01.png");
+//参数1：cc.SpriteFrame对象
+var sprite = cc.Sprite.create(spriteFrame);
+(4) 根据纹理texture创建
+var texture = cc.textureCache.addImage("HelloHTML5World.png");
+
+//参数1：纹理
+var sprite1 = cc.Sprite.create(texture);
+var myLabel = cc.LabelTTF.create('label text', 'Times New Roman', 32, cc.size(320,32), cc.TEXT_ALIGNMENT_LEFT);
+
+var fontDef = new cc.FontDefinition();
+fontDef.fontName = "Arial";
+fontDef.fontSize = "32";
+//参数1：显示字符串，参数2：自定义对象cc.FontDefinition
+var myLabel = cc.LabelTTF.create('label text', fontDef);
+
+
+单例对象几乎都被重构了
+cc.audioEngine
+cc.director
+cc.view
+cc.saxParser
+cc.plistParser
+重构之后，文档最初的例子在v3.0中将如下面代码所示：
+cc.spriteFrameCache.addSpriteFrames(s_boxs_plist);
+var boxFrame = cc.spriteFrameCache.getSpriteFrame("box_normal_00.png");
+
+基础数据类型统一通过方法来创建。不再支持new方式
+//1 快捷创建,返回相当于cc.p(0,0)
+var point1 = cc.p();
+//2 常用
+var point2 = cc.p(100,100);
+//3 拷贝
+var point3 = cc.p(point2);
+cc.Size
+//1 快捷创建,返回相当于cc.size(0,0)
+var size1 = cc.size();
+//2 常用
+var size2 = cc.size(100,100);
+//3 拷贝
+var size3 = cc.size(size2);
+cc.Rect
+//1 快捷创建,返回相当于cc.rect(0,0,0,0)
+var rect1 = cc.rect();
+//2 常用
+var rect2 = cc.rect(100,100,100,100);
+//3 拷贝
+var rect3 = cc.rect(rect2);
+cc.Color
+//1 快捷创建,返回相当于cc.color(0,0,0,255);
+var color1 = cc.color();
+//2 常用，不包含alpha值
+var color2 = cc.color(255,255,255);
+//3 常用，包含alpha值
+var color3 = cc.color(255,255,255,255);
+//4 拷贝
+var color4 = cc.color(color2);
+//5 固定颜色
+var color5 = cc.color.white;
+ 
+常用9种固定颜色类型
+cc.color.WHITE;//白色
+cc.color.YELLOW;//黄色
+cc.color.BLUE;//蓝色
+cc.color.GREEN;//绿色
+cc.color.RED;//红色
+cc.color.MAGENTA;//紫红色
+cc.color.BLACK;//黑色
+cc.color.ORANGE;//橙色
+cc.color.GRAY;//灰色
+
+======
+Web引擎
+
+CCFileUtils.js在Web引擎中已经被删除了，原因是FileUtils在原生平台中的文件检索功能在Web端是无法实现的。
+
+二进制文件获取的方法被转移到了cc.loader.loadBinary（异步）以及cc.loader.loadBinarySync（同步）中。 其中，cc.loader.loadBinarySync方法是极其不推荐使用的，可能在今后版本升级改造中会被废弃掉。希望开发者别滥用。
+
+所有资源加载、获取、释放等操作都统一到cc.loader中了。
+
+对于路径字符串拼接操作统一到cc.path中了。
+JSB
+
+在JSB中，由于FileUtils调用的是原生平台的实现，所以我们将其保留，并将cc.fileUtils重命名为jsb.fileUtils，这样用户就会知道这是原生平台才有的API。
+=======
